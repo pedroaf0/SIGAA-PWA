@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sigaa Mobile</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='manifest' href='/manifest.webmanifest'>
+    <script src='libs/a076d05399.js'></script>
+<script src="/libs/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<style>
+.form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18      */
+.form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+</style>
+
+<script src="js.js"></script>
+<body style=" background: url(bg.png) no-repeat, linear-gradient(to bottom left, #929CAE,#848E9F  60%) no-repeat;padding-bottom: 15%;">
+    <div style="height: 100%;">
+        <img src="sigaa.png" width="100%" >
+        <div class="modal-body">
+            <form>
+                <h1 style="font-size: medium;color: white;">Bem vindo<br>
+                    <strong style="font-size: small;color: white;" id="nome"></strong><br>
+                    <span style="font-size: small;color: white;" id="curso"></span><br>
+
+                </h1><br><br>
+                    <div style="    background: #99D6D9;
+                    border: none;
+                    border-radius: 100px;
+                    color: #79818d;" class="btn btn-primary btn-block btn-lg" onclick="boletim()">ver boletim ></div>
+                </div>
+            </form>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById("nome").innerHTML = localStorage.getItem("nome");
+document.getElementById("curso").innerHTML = localStorage.getItem("turma");
+function boletim(){
+    window.location.href = "/boletim.html";
+}
+if ("serviceWorker" in navigator) {
+  if (navigator.serviceWorker.controller) {
+    console.log("[PWA Builder] active service worker found, no need to register");
+  } else {
+    // Register the service worker
+    navigator.serviceWorker
+      .register("pwabuilder-sw.js", {
+        scope: "./"
+      })
+      .then(function (reg) {
+        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+      });
+  }
+}
+</script>
+
+    
+</body>
+</html>

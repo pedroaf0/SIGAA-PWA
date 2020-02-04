@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sigaa Mobile</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src='libs/a076d05399.js'></script>
+<script src="/libs/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<style>
+.form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18      */
+.form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+</style>
+
+<script src="js.js"></script>
+<body style=" background: url(bg.png) no-repeat, linear-gradient(to bottom left, #929CAE,#848E9F  60%) no-repeat;padding-bottom: 15%;">
+    <div style="height: 100%;">
+        <img onclick="dev()" src="sigaa.png" width="100%" style="padding: 20%;">
+        <div class="modal-body">
+            <form>
+                <div style="background-color: transparent;" class="form-group">
+                    <div class="input-group">
+                        <span style="background: transparent;
+                        border: none;
+                        color: white;
+                        border-radius: 0;
+                        box-shadow: none; " class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input style="background: transparent;
+                        border-right: none;
+                        color: white;
+                        border-top: none;
+                        border-left: none;
+                        border-radius: 0;
+                        box-shadow: none; " id="Username" type="text" class="form-control" name="username" placeholder="Username" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span style="background: transparent;
+                        border: none;
+                        color: white;
+                        border-radius: 0; " class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input style="background: transparent;
+                        border-right: none;
+                        color: white;
+                        border-top: none;
+                        border-left: none;
+                        border-radius: 0;
+                        box-shadow: none;" id="senha" type="password" id="" class="form-control" name="password" placeholder="Password" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="    background: #99D6D9;
+                    border: none;
+                    border-radius: 100px;
+                    color: #79818d;" class="btn btn-primary btn-block btn-lg" onclick="sub()">Entrar</div>
+                </div>
+                <div style="text-align: center;">
+                <span style="display: none;" id="erro">senha ou numero incorreto</span>
+                
+            </div>
+            
+        </form>
+        <br><br><br><br><br><br><br><br>
+    </div>
+</div>
+</div>
+<script>
+function sub(){
+    document.getElementById("erro").style = "display:none;color: rgb(255, 255, 255);";
+    var user = document.getElementById("Username").value;
+    var senha = document.getElementById("senha").value;
+
+    if (user.length == 11 && isNumber(user) && senha.length > 3){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if(this.responseText != 'erro') {
+          var data = JSON.parse(this.responseText);
+          localStorage.setItem("nome", data.nome);
+          localStorage.setItem("turma", data.curso);
+          localStorage.setItem("user", user);
+          localStorage.setItem("senha", senha);
+          window.location.href = "/app.html";
+        }else{
+            document.getElementById("erro").innerHTML = "senha ou cpf incorreto";
+            document.getElementById("erro").style = "display:block;color: rgb(255, 255, 255);"
+        }
+    }
+  };
+  xhttp.open("GET", localStorage.getItem("api")+"login/"+user+"/"+senha, true);
+  xhttp.send();
+    }else{
+        document.getElementById("erro").innerHTML = "senha ou cpf invalidos";
+        document.getElementById("erro").style = "display:block;color: rgb(255, 255, 255);";
+    }
+}
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function dev(){
+    localStorage.setItem("api", prompt("Api link:", localStorage.getItem("api")));
+}
+</script>
+
+</body>
+</html>

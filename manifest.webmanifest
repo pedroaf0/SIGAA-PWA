@@ -1,0 +1,23 @@
+{
+	"lang" : "Portuguese",
+	"name" : "SIGAA",
+	"scope" : "/app.html",
+	"display" : "standalone",
+	"start_url" : "/app.html",
+	"short_name" : "SIGAA",
+	"theme_color" : "#838B9E",
+	"description" : "sigaa ofiline",
+	"orientation" : "portrait-primary",
+	"background_color" : "#838B9E",
+	"related_applications" : "",
+	"prefer_related_applications" : "false",
+	"icons" : [
+		{
+			"src": "icon.png",
+            "sizes": "512x512",
+            "type":"image/png"
+		}
+		],
+	"screenshots" : [],
+	"generated" : "true"
+}
