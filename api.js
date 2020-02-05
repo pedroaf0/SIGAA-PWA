@@ -7,8 +7,8 @@ module.exports = {
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
       await page.goto('https://sig.ifrs.edu.br/sigaa/verTelaLogin.do');
-      await page.type('#conteudo > div.logon > form > table > tbody > tr:nth-child(1) > td > input[type=text]', "01639243097");
-      await page.type('#conteudo > div.logon > form > table > tbody > tr:nth-child(2) > td > input[type=password]', "33551047p");
+      await page.type('#conteudo > div.logon > form > table > tbody > tr:nth-child(1) > td > input[type=text]', user);
+      await page.type('#conteudo > div.logon > form > table > tbody > tr:nth-child(2) > td > input[type=password]', senha);
       await page.click('#conteudo > div.logon > form > table > tfoot > tr > td > input[type=submit]');
       
       await page.goto('https://sig.ifrs.edu.br/sigaa/portais/discente/discente.jsf');
