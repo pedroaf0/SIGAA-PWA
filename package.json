@@ -1,0 +1,17 @@
+{
+  "name": "sigaa-api",
+  "version": "1.0.0",
+  "description": "api do sigaa",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "pedroaf0",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "puppeteer": "^2.1.0"
+  }
+}
