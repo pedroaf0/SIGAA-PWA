@@ -3,21 +3,19 @@
 	"name" : "SIGAA",
 	"scope" : "/app.html",
 	"display" : "standalone",
-	"start_url" : "/app.html",
+	"start_url" : "https://pedroaf0.github.io/app.html",
 	"short_name" : "SIGAA",
 	"theme_color" : "#838B9E",
 	"description" : "sigaa ofiline",
 	"orientation" : "portrait-primary",
 	"background_color" : "#838B9E",
-	"related_applications" : "",
-	"prefer_related_applications" : "false",
+	"related_applications" : [],
+	"prefer_related_applications" : false,
 	"icons" : [
 		{
-			"src": "icon.png",
-            "sizes": "512x512",
-            "type":"image/png"
-		}
-		],
+			"src": "https://pedroaf0.github.io/icon.png",
+			"sizes": "512x512"
+		}],
 	"screenshots" : [],
-	"generated" : "true"
+	"generated" : "undefined"
 }
