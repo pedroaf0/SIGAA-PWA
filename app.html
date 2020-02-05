@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
+    <head>
+        <link rel='manifest' href='/manifest.webmanifest'>
+        <script src="/sw-register.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sigaa Mobile</title>
     <link rel="stylesheet" href="libs/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel='manifest' href='/manifest.webmanifest'>
     <script src='libs/a076d05399.js'></script>
 <script src="/libs/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -44,20 +45,7 @@ document.getElementById("curso").innerHTML = localStorage.getItem("turma");
 function boletim(){
     window.location.href = "/boletim.html";
 }
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("sw.js", {
-        scope: "./"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
-}
+
 </script>
 
     
