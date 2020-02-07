@@ -1,9 +1,9 @@
 {
 	"lang" : "Portuguese",
 	"name" : "SIGAA",
-	"scope" : "/app.html",
+	"scope" : "app.html",
 	"display" : "standalone",
-	"start_url" : "https://pedroaf0.github.io/app.html",
+	"start_url" : "app.html",
 	"short_name" : "SIGAA",
 	"theme_color" : "#838B9E",
 	"description" : "sigaa ofiline",
@@ -13,9 +13,9 @@
 	"prefer_related_applications" : false,
 	"icons" : [
 		{
-			"src": "https://pedroaf0.github.io/icon.png",
+			"src": "icon.png",
 			"sizes": "512x512"
 		}],
 	"screenshots" : [],
-	"generated" : "undefined"
+	"generated" : "false"
 }
